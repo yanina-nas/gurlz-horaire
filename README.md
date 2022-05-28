@@ -1,6 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a human-friendly version of Interface3 schedule.
 
-## Getting Started
+It gets its data from [this table](https://interface3.odoo.com/horaire-tv/aaaa-bbbb-cccc-dddd-eeee), adjusts its presentation, and adds filtering feature on top. 
+
+In other words, it mirrors the information from the odoo table.
+
+<img width="600" alt="Screenshot 2022-05-27 at 14 59 12" src="https://user-images.githubusercontent.com/46354296/170816706-160dc31f-2e38-4fe5-8470-83828ca8bdf1.png">
+
+## How to apply filters
+Click on filter icon on the right of a column header. 
+
+### Dropdown presents a list of all the available options. 
+
+<img width="600" alt="Screenshot 2022-05-28 at 09 27 10" src="https://user-images.githubusercontent.com/46354296/170816638-285b3be5-81e2-42bf-99b5-bf690f9e65d2.png">
+
+Choose an option and click `OK`.
+
+Then only selected entries are shown.
+
+### You can apply another filter on top.
+
+<img width="600" alt="Screenshot 2022-05-28 at 09 27 44" src="https://user-images.githubusercontent.com/46354296/170816692-2be1a175-fe0e-4eb5-98b4-54da5b028c93.png">
+
+Then only entries that comply to both filtering criteria, are shown.
+
+<img width="600" alt="Screenshot 2022-05-28 at 09 28 10" src="https://user-images.githubusercontent.com/46354296/170816837-6a3427ca-3f5d-4570-b072-c28e69ca4868.png">
+
+To undo, press `Reset`, or uncheck all selected checkboxes and press `OK`.
+
+
+## To run it locally
 
 First, run the development server:
 
@@ -11,24 +39,3 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
