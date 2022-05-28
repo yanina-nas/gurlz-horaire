@@ -45,10 +45,7 @@ const qaEn = [
     question: "Actually, the idea is nice... But I don't like several things.",
     answer: (
     <span>
-        { "Your feedback is golden, please share your thoughts by clicking `Issue`"}
-        
-        
-        {" button. I placed it here again just in case. Let's collect all these unfixed insects."}
+        { "Your feedback is golden, please share your thoughts by clicking the `Issue` button. I placed it here again just in case. Let's collect all these unfixed insects."}
         <br />
         <GitHubButton 
             href="https://github.com/yanina-nas/gurlz-horaire/issues" 
