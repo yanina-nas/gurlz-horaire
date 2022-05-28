@@ -2,6 +2,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import 'antd/dist/antd.css';
+import GitHubButton from 'react-github-btn'
 import { InstagramOutlined, LinkedinOutlined, GoogleOutlined } from '@ant-design/icons'
 
 import styles from '../styles/Home.module.css'
@@ -20,13 +21,13 @@ const qaEn = [
     answer: (
     <span>
         {"Since this app is dumb, it can only present information that it sees "}
-        <a href="https://interface3.odoo.com/horaire-tv/aaaa-bbbb-cccc-dddd-eeee">{"here"}</a>{". Difference between the two is only due to presentation. In particular, I changed Date format to day-first instead of month-first, column order for mobile readability, and extrapolated dates and course names to make the list sortable."}
+        <a href="https://interface3.odoo.com/horaire-tv/aaaa-bbbb-cccc-dddd-eeee">{"here"}</a>{". Difference between the two is only in presentation. In particular, I changed Date format to day-first instead of month-first, column order for mobile readability, and extrapolated dates and course names to make it filterable."}
     </span>
     )
   },
   {
     question: 'I see "No data".',
-    answer: "Probably, there are no entries for your selection. For example, if you selected a program and a professor who doesn't give courses to students of this program."
+    answer: "Probably, there are no entries for your selection. For example, if you selected a program and a professor who doesn't give courses to the students of this program."
   },
   {
     question: 'This is not mobile-friendly. Like, at all!',
@@ -42,7 +43,23 @@ const qaEn = [
   },
   {
     question: "Actually, the idea is nice... But I don't like several things.",
-    answer: "Your feedback is golden, please share your thoughts by clicking `Issue` button. I placed it here again just in case. Let's collect all these unfixed insects."
+    answer: (
+    <span>
+        { "Your feedback is golden, please share your thoughts by clicking `Issue`"}
+        
+        
+        {" button. I placed it here again just in case. Let's collect all these unfixed insects."}
+        <br />
+        <GitHubButton 
+            href="https://github.com/yanina-nas/gurlz-horaire/issues" 
+            data-icon="octicon-issue-opened" 
+            data-size="large" 
+            aria-label="Issue yanina-nas/gurlz-horaire on GitHub"
+        >
+          {"Issue"}
+        </GitHubButton>
+    </span>
+    )
   },
   {
     question: 'How it works?',
@@ -56,7 +73,7 @@ const qaEn = [
   },
   {
     question: 'Why!?',
-    answer: "I used to look up the schedule from screenshots out of Nicole's emails to all WADs. But this time, after end-of-may examination there were no screenshots for June. So I took a look at our odoo page and got sad. It took a little work and voila, checking the schedule is not painful anymore. And hope that for some of you, too!"
+    answer: "I used to look up the schedule from screenshots attached to Nicole's emails to all students. But this time, after end-of-may examination there were no screenshots for June. So I took a look at our odoo page and got sad. It took a little work and voila, checking the schedule is not painful anymore. And I hope that it is true for some of you, too!"
   },
 ];
 
