@@ -86,7 +86,6 @@ const Faq = () => {
                 </List.Item>
             )}
         />
-        <Divider>{`I hope this app saves a bit of your time in the future!`}</Divider>
       </main>
       <a href="mailto:plainwhiteyoghurt@gmail.com">
         <Button  icon={<GoogleOutlined />} size={"large"} />

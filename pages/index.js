@@ -58,6 +58,7 @@ function Home({ entries, headers }) {
       <Head>
         <title>Interface3 Horaire</title>
         <meta name="description" content="Interface3 schedule aka GURLZ horaire" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/> 
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <GitHubButton 
@@ -93,7 +94,7 @@ function Home({ entries, headers }) {
           <Button shape="circle" icon={<QuestionOutlined />} size="large" />
         </Link>
       </p>
-      <Table onChange={onChange} columns={columns} dataSource={data} />
+      <Table scroll={{ x: 1000 }} size="middle" onChange={onChange} columns={columns} dataSource={data} />
       </main>
       <footer className={styles.footer}>
         <code>
