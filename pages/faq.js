@@ -20,7 +20,7 @@ const qaEn = [
     answer: (
     <span>
         {"Since this app is dumb, it can only present information that it sees "}
-        <a href="https://interface3.odoo.com/horaire-tv/aaaa-bbbb-cccc-dddd-eeee">{"here"}</a>{"."}
+        <a href="https://interface3.odoo.com/horaire-tv/aaaa-bbbb-cccc-dddd-eeee">{"here"}</a>{". Difference between the two is only due to presentation. In particular, I changed Date format to day-first instead of month-first, column order for mobile readability, and extrapolated dates and course names to make the list sortable."}
     </span>
     )
   },
@@ -30,15 +30,15 @@ const qaEn = [
   },
   {
     question: 'This is not mobile-friendly. Like, at all!',
-    answer: "True. I'm thinking on making it mobile-friendly in a smart way, so currently I am still undecided about which columns to hide etc. I'm in no way an expert, but I heard somewhere that effective tables on mobile devices are not so straightforward."
+    answer: "True. I'm thinking on making it mobile-friendly in a smarter way. So far I switched the columns a bit to fit three most important ones to smaller screens, but it's still a long way to go."
   },
   {
     question: 'Column sizes change if I click next page.',
     answer: "You spot a nice one! Since sizes of columns adapt to the content of a given page, I'd recommend you to select more entries per page (lower right corner of the table). This way you can calmly observe your selected entries without needing to changee pages too often."
   },
   {
-    question: "The headers are weird. Date: AM, it just doesn't make any sense! And the date format...",
-    answer: "Indeed! I left most of the data from the table completely unchanged and added only what was needed for performing filtering and sorting: extrapolated values for dates and educational program (Jour and Formation columns)."
+    question: "The headers are weird. Date: AM, it just doesn't make any sense!",
+    answer: "Indeed! I just formatted the presentation a bit, while leaving most of the data from the original table completely unchanged. Added is only what was needed for performing filtering and sorting: extrapolated values for dates and educational program (Jour and Formation columns)."
   },
   {
     question: "Actually, the idea is nice... But I don't like several things.",
@@ -99,7 +99,7 @@ const Faq = () => {
         </a>
       <footer className={styles.footer}>
         <code>
-          {`< `}Made with love by Nastya{` />`}
+          {`< `}Made with love {` />`}
         </code>
         
       </footer>
