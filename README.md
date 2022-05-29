@@ -1,5 +1,8 @@
 This is a human-friendly version of Interface3 schedule.
 
+<img width="600" alt="Screenshot 2022-05-29 at 21 53 01" src="https://user-images.githubusercontent.com/46354296/170889025-c8f6e924-96c8-492c-a28f-c54bf31b57b5.png">
+
+
 It gets its data from [this table](https://interface3.odoo.com/horaire-tv/aaaa-bbbb-cccc-dddd-eeee), adjusts its presentation, and adds filtering feature on top. 
 
 In other words, it mirrors the information from the odoo table.
