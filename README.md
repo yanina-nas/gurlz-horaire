@@ -9,7 +9,7 @@ In other words, it mirrors the information from the odoo table.
 ## How to apply filters
 Click on filter icon on the right of a column header. 
 
-### Dropdown presents a list of all the available options. 
+### Dropdown presents a list of all the available options
 
 <img width="600" alt="Screenshot 2022-05-28 at 09 27 10" src="https://user-images.githubusercontent.com/46354296/170816638-285b3be5-81e2-42bf-99b5-bf690f9e65d2.png">
 
@@ -17,7 +17,7 @@ Choose an option and click `OK`.
 
 Then only selected entries are shown.
 
-### You can apply another filter on top.
+### Another filter can be added on top
 
 <img width="600" alt="Screenshot 2022-05-28 at 09 27 44" src="https://user-images.githubusercontent.com/46354296/170816692-2be1a175-fe0e-4eb5-98b4-54da5b028c93.png">
 
