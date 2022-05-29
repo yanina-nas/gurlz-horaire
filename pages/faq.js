@@ -35,7 +35,7 @@ const qaEn = [
   },
   {
     question: 'Column sizes change if I click next page.',
-    answer: "You spot a nice one! Since sizes of columns adapt to the content of a given page, I'd recommend you to select more entries per page (lower right corner of the table). This way you can calmly observe your selected entries without needing to changee pages too often."
+    answer: "You spot a nice one! Since sizes of columns adapt to the content of a given page, I'd recommend you to select more entries per page (lower right corner of the table). This way you can calmly observe your selected entries without needing to change pages too often."
   },
   {
     question: "The headers are weird. Date: AM, it just doesn't make any sense!",
