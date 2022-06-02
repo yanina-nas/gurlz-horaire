@@ -14,14 +14,14 @@ const qaEn = [
   },
   {
     question: 'I see a blue icon next to column title. What does it mean?',
-    answer: 'This blue icon means that a filter is active, so you see selected entries according to your selection criteria (checkbox yoy clicked). To undo this, click reset in a dropdown menu.'
+    answer: 'This blue icon means that a filter is active, so you see selected entries according to your selection criteria (checkbox you clicked). To undo this, click reset in a dropdown menu.'
   },
   {
     question: 'I want to see more into the future, and sometimes to take a look into the past.',
     answer: (
     <span>
         {"Since this app is dumb, it can only present information that it sees "}
-        <a href="https://interface3.odoo.com/horaire-tv/aaaa-bbbb-cccc-dddd-eeee">{"here"}</a>{". Difference between the two is only in presentation. In particular, I changed Date format to day-first instead of month-first, column order for mobile readability, and extrapolated dates and course names to make it filterable."}
+        <a href="https://interface3.odoo.com/horaire-tv/aaaa-bbbb-cccc-dddd-eeee">{"here"}</a>{". Difference between the two is only in presentation. In particular, I changed date format for readability, column order for mobile accessibility, and extrapolated dates and course names to make the table filterable."}
     </span>
     )
   },
@@ -31,7 +31,7 @@ const qaEn = [
   },
   {
     question: 'This is not mobile-friendly. Like, at all!',
-    answer: "True. I'm thinking on making it mobile-friendly in a smarter way. So far I switched the columns a bit to fit three most important ones to smaller screens, but it's still a long way to go."
+    answer: "True. I'm thinking on making it mobile-friendly in a smarter way. So far I resorted to horizontal scroll and switched columns a bit to fit the most important ones to smaller screens, but it's still a long way to go."
   },
   {
     question: 'Column sizes change if I click next page.',
@@ -59,7 +59,7 @@ const qaEn = [
     )
   },
   {
-    question: 'How it works?',
+    question: 'How does it work?',
     answer: (
         <span>
             {"This app goes to "}
