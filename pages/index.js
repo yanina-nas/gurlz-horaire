@@ -6,8 +6,8 @@ import 'antd/dist/antd.css';
 // import GitHubButton from 'react-github-btn'
 import { parse, format } from 'date-fns'
 import { fr } from 'date-fns/locale'
-import CalendarWidget from './calendarWidget'
-import Faq from './faq'
+import CalendarWidget from '../components/calendarWidget'
+import Faq from '../components/faq'
 import moment from 'moment';
 import 'moment/locale/fr';
 moment.locale('fr');
