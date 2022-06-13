@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
   <Head>
         <title>Interface3 Horaire</title>
         <meta name="description" content="Interface3 schedule aka GURLZ horaire" />
-        <meta name="viewport" content="width=device-width, initial-scale=1"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/> 
         <link rel="icon" href="/favicon.ico" />
       </Head>
   <Layout>
