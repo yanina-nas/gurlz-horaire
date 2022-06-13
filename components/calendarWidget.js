@@ -21,7 +21,7 @@ const CalendarWidget = ({ headers, entries }) => {
           <div key={index}>
             {/* <Badge style={{wordBreak:"break-word", textOverflow: "ellipsis"}} color={item.color} text={item.content}/> */}
             <Tooltip placement="topLeft" trigger="click" title={item.content}>
-              <Tag style={{wordBreak:"break-word", textOverflow: "ellipsis", maxWidth: "150px"}} color={item.color}>{item.content}</Tag>
+              <Tag style={{wordBreak:"break-word", textOverflow: "ellipsis"}} color={item.color}>{item.content}</Tag>
             </Tooltip>
             {/* <Badge color={item.color} count={item.content} /> */}
           </div>
