@@ -1,12 +1,7 @@
-
-import Head from 'next/head'
-import Link from 'next/link'
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.css'
 import GitHubButton from 'react-github-btn'
 import { InstagramOutlined, LinkedinOutlined, GoogleOutlined } from '@ant-design/icons'
-
-import styles from '../styles/Home.module.css'
-import { Badge, List, Typography, Divider, Button } from 'antd';
+import { List, Typography, Button } from 'antd';
 const qaEn = [
   {
     question: 'What on earth is this?',
@@ -45,7 +40,7 @@ const qaEn = [
     question: "Actually, the idea is nice... But I don't like several things.",
     answer: (
     <span>
-        { "Your feedback is golden, please share your thoughts by clicking the `Issue` button. I placed it here again just in case. Let's collect all these unfixed insects."}
+        { "Your feedback is golden, please share your thoughts by clicking the `Issue` button. Let's collect all these unfixed insects."}
         <br />
         <GitHubButton 
             href="https://github.com/yanina-nas/gurlz-horaire/issues" 
@@ -74,33 +69,18 @@ const qaEn = [
   },
 ];
 
-
 const Faq = () => {
     return (
-    <div className={styles.container}>
-        <Head>
-            <title>Interface3 horaire</title>
-            <meta name="FAQ" content="Interface3 schedule aka GURLZ horaire" />
-            <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <main className={styles.main}>
-        <Badge count={10}>
-            <h1 className={styles.title}>FAQ</h1>
-        </Badge>
-        <Link href="/">
-            {"Go back"}
-        </Link>
-        <Divider orientation="left">{qaEn[0].question}</Divider>
-        <List
-            bordered
-            dataSource={qaEn}
-            renderItem={qaEn => (
-                <List.Item>
-                <Typography.Text mark>{qaEn.question}</Typography.Text> {qaEn.answer}
-                </List.Item>
-            )}
-        />
-      </main>
+    <div>
+      <List
+        bordered
+        dataSource={qaEn}
+        renderItem={qaEn => (
+            <List.Item>
+            <Typography.Text mark>{qaEn.question}</Typography.Text> {qaEn.answer}
+            </List.Item>
+        )}
+      />
       <a href="mailto:plainwhiteyoghurt@gmail.com">
         <Button  icon={<GoogleOutlined />} size={"large"} />
       </a>
@@ -110,12 +90,6 @@ const Faq = () => {
         <a href="https://www.instagram.com/yanina_nas/">
         <Button  icon={<InstagramOutlined />} size={"large"} />
         </a>
-      <footer className={styles.footer}>
-        <code>
-          {`< `}Made with love {` />`}
-        </code>
-        
-      </footer>
     </div>
 )}
 

@@ -1,30 +1,25 @@
 import React from 'react'
-import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import * as cheerio from 'cheerio';
-import { Table, Button, Badge } from 'antd';
+import { Table, Badge } from 'antd';
 import 'antd/dist/antd.css';
-import Link from 'next/link'
-import { QuestionOutlined } from '@ant-design/icons'
-import GitHubButton from 'react-github-btn'
+// import GitHubButton from 'react-github-btn'
 import { parse, format } from 'date-fns'
 import { fr } from 'date-fns/locale'
+import CalendarWidget from './calendarWidget'
+import Faq from './faq'
+import moment from 'moment';
+import 'moment/locale/fr';
+moment.locale('fr');
 
-function Home({ entries, headers }) {
-  // switch columns 2 and 4 for placing courses column mobile display
-  let temp = headers[2]
-  headers[2] = headers[4]
-  headers[4] = temp
+function Home({ entries, headers, viewMode }) {
   
   headers[1] = {
     ...headers[1],
     onFilter: (value, record) => record.Formation.indexOf(value) === 0,
     sortDirections: ['descend']
   }
-  temp = headers[3]
-  headers[3] = headers[5]
-  headers[5] = temp
-
+  
   for(let columnIndex = 2; columnIndex < 4; columnIndex++){
     headers[columnIndex] = {
       ...headers[columnIndex],
@@ -40,7 +35,6 @@ function Home({ entries, headers }) {
     }
   }
   
-
   const data = React.useMemo(
     () => entries, [entries]
   )
@@ -54,14 +48,9 @@ function Home({ entries, headers }) {
   }
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Interface3 Horaire</title>
-        <meta name="description" content="Interface3 schedule aka GURLZ horaire" />
-        <meta name="viewport" content="width=device-width, initial-scale=1"/> 
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <GitHubButton 
+    <div>
+      
+      {/* <GitHubButton 
         href="https://github.com/yanina-nas/gurlz-horaire/issues" 
         data-icon="octicon-issue-opened" 
         data-size="large" 
@@ -76,31 +65,66 @@ function Home({ entries, headers }) {
         aria-label="Star yanina-nas/gurlz-horaire on GitHub"
       >
         {"Give a star"}
-      </GitHubButton>
-      <main className={styles.main}>
-      <h1 className={styles.title}>
-        {"Welcome to "}<a href="https://www.interface3.be">{"Interface3"}</a><br/>
-      </h1>
-      <Badge.Ribbon className={styles.ribbon} text="beta" color="magenta">
-        <h1 className={styles.title}>
-          {"Horaire"}
-        </h1>
-      </Badge.Ribbon>
-      <p className={styles.description}>
-        <code className={styles.code}>
-          {"Questions ? Check the FAQ "}&#8594;
-        </code>
-        <Link href="/faq">
-          <Button shape="circle" icon={<QuestionOutlined />} size="large" />
-        </Link>
-      </p>
-      <Table scroll={{ x: 1000 }} size="middle" onChange={onChange} columns={columns} dataSource={data} />
-      </main>
-      <footer className={styles.footer}>
-        <code>
-          {"Try not. Do or do not. There is no try."}
-        </code>
-      </footer>
+      </GitHubButton> */}
+      
+      {viewMode === 'calendar' && 
+        <>
+        <div className={styles.container}>
+            <div className={styles.hero}>
+          <Badge.Ribbon className={styles.ribbon} text="new" color="magenta">
+            <h1 className={styles.title}>
+              {"Calendrier"}
+            </h1>
+          </Badge.Ribbon>
+          </div>
+          </div>
+          <main className={styles.main}>
+        {/* <Divider orientation="left">{viewMode.toUpperCase()}</Divider> */}
+        <div className={styles.scrollContainer} style={{width: "100%", overflow: "scroll"}} >
+          <div style={{maxWidth: "1000px", minWidth: "700px", overflowX: "auto", overflowY: "hidden"}}>
+            <CalendarWidget headers={headers} entries={entries} />
+          </div>
+        </div>
+          </main>
+        </>
+      }
+      {viewMode === 'table' && 
+        <>
+          <div className={styles.container}>
+            <div className={styles.hero}>
+              <h1 className={styles.title}>
+                <a className={styles.ribbon} href="https://www.interface3.be">{"Interface3"}</a><br/>
+              </h1>
+              <Badge.Ribbon className={styles.ribbon} text="1.0" color="magenta">
+                <h1 className={styles.title}>
+                  {"Horaire"}
+                </h1>
+              </Badge.Ribbon>
+            </div>
+          </div>
+          <main className={styles.main}>
+          <Table scroll={{ x: 1000 }} size="middle" onChange={onChange} columns={columns} dataSource={data} />
+          </main>
+        </>
+      }
+      {viewMode === 'faq' && 
+        <>
+        <div className={styles.container}>
+            <div className={styles.hero}>
+          <Badge count={10}>
+            <h1 className={styles.title}>
+              {"FAQ"}
+            </h1>
+          </Badge>
+          </div>
+          </div>
+          <main className={styles.main}>
+            <div style={{maxWidth: "1000px"}}>
+              <Faq />
+             </div>
+          </main>
+        </>
+      }
     </div>
   )
 }
@@ -141,7 +165,6 @@ export async function getServerSideProps() {
       entries[index][tdContent[0][0]] = entries[index-1][tdContent[0][0]]
     }
   }
-
   
   // extrapolation of formations
   for(let index = 0; index < entries.length; index++) {
@@ -215,6 +238,15 @@ export async function getServerSideProps() {
       { locale: fr }
     )
   }
+   // switch columns 2 and 4
+  let temp = headers[2]
+  headers[2] = headers[4]
+  headers[4] = temp
+
+  // switch columns 3 and 5
+  temp = headers[3]
+  headers[3] = headers[5]
+  headers[5] = temp
 
   return { props: { entries, headers }}
 }
